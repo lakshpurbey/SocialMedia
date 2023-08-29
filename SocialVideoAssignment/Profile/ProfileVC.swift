@@ -29,6 +29,7 @@ class ProfileVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         clt_Videos.delegate = self
         clt_Videos.dataSource = self
 
+        self.navigationItem.title = "Profile"
         APIFetch()
     }
 
@@ -36,18 +37,14 @@ class ProfileVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         self.apiService =  APIService()
         self.apiService.apiToGetDataProfile(username: username ?? ""){ (posts) in
 
-            print("Postss", posts.data.name)
-
-
-//            lbl_Likes.text = posts.data.
-
             self.posts = posts.data.posts
-
             print("self.postsself.posts", self.posts)
 
             DispatchQueue.main.async {
-                self.lbl_User.text = posts.data.name
-                self.img_User.setImageFromUrl(ImageURL: posts.data.profilePic)
+                self.lbl_User.text = posts.data.userName
+//                self.img_User.setImageFromUrl(ImageURL: posts.data.profilePic)
+
+                self.img_User.sd_setImage(with: URL(string: posts.data.profilePic), placeholderImage: UIImage(named: "Avatar.png"))
 
                 self.clt_Videos.reloadData()
             }

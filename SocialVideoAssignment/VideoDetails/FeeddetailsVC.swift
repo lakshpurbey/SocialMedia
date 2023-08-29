@@ -29,6 +29,7 @@ class FeeddetailsVC: UIViewController, UIGestureRecognizerDelegate{
         // Do any additional setup after loading the view.
 
         //Configure data
+        self.navigationItem.title = "Post"
 
         let strlikes = String(feeds?.likes ?? 0) + " " + "Like"
 
@@ -51,7 +52,6 @@ class FeeddetailsVC: UIViewController, UIGestureRecognizerDelegate{
         player.pause()
         self.navigationController?.pushViewController(viewcontroller, animated: true)
 
-        
     }
 
     func VideoDisplay() {
@@ -61,6 +61,7 @@ class FeeddetailsVC: UIViewController, UIGestureRecognizerDelegate{
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.view_Video.bounds
         playerLayer.videoGravity = AVLayerVideoGravity.resize
+        player.playImmediately(atRate: 1.0)
 
         self.view_Video.layer.addSublayer(playerLayer)
         player.play()

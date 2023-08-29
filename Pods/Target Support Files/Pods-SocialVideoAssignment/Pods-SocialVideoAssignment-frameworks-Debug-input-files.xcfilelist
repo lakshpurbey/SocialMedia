@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-SocialVideoAssignment/Pods-SocialVideoAssignment-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IHProgressHUD/IHProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework

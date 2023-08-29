@@ -1,0 +1,6 @@
+framework module Pods_SocialVideoAssignment {
+  umbrella header "Pods-SocialVideoAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}

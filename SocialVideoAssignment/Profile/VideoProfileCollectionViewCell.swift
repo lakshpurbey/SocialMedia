@@ -13,5 +13,4 @@ class VideoProfileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var lbl_Likes: UILabel!
 
-    
 }

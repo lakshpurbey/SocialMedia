@@ -8,6 +8,8 @@
 import UIKit
 import AVKit
 import AVFoundation
+import SDWebImage
+import IHProgressHUD
 
 class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
@@ -29,6 +31,7 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         tbl_feed.addSubview(refreshControl) //
 
         APIFetch()
+
     }
 
     @objc func refresh(_ sender: AnyObject) {
@@ -37,6 +40,7 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     }
 
     func APIFetch() {
+        //With Dispatch Queue
         self.apiService =  APIService()
         self.apiService.apiToGetData { (feed) in
             self.feeds = feed.data.results
@@ -44,6 +48,7 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             DispatchQueue.main.async {
                 self.tbl_feed.reloadData()
                 self.refreshControl.endRefreshing()
+
             }
         }
     }
@@ -74,29 +79,16 @@ class FeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! feedTableViewCell
 
          let feeddata = self.feeds?[indexPath.section]
-         print("feeddatafeeddata", feeddata)
 
          cell.lbl_Username.text = feeddata?.user
 
          let strlikes = String(feeddata?.likes ?? 0) + " " + "Like"
          cell.lbl_VideoLikes.text = strlikes
 
-         cell.view_VideoDispaly.setImageFromUrl(ImageURL: feeddata?.thumbnailURL ?? "")
-
-
-         cell.btn_tapProfile.tag = indexPath.section
-         cell.btn_tapProfile.addTarget(self, action: Selector(("buttonClicked:")),
-                                       for: UIControl.Event.touchUpInside)
-
+         cell.view_VideoDispaly.sd_setImage(with: URL(string: feeddata?.thumbnailURL ?? ""), placeholderImage: UIImage(named: "Avatar.png"))
 
         return cell
     }
-
-    @objc func buttonClicked(sender: UIButton)
-    {
-        print("sendersender", sender)
-
-  }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 

@@ -1,0 +1,26 @@
+PODS:
+  - IHProgressHUD (0.1.4)
+  - SDWebImage (5.13.3):
+    - SDWebImage/Core (= 5.13.3)
+  - SDWebImage/Core (5.13.3)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - IHProgressHUD
+  - SDWebImage (~> 5.0)
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - IHProgressHUD
+    - SDWebImage
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  IHProgressHUD: a01846bfbb581c761c79747c67b08387c3bdfae3
+  SDWebImage: af5bbffef2cde09f148d826f9733dcde1a9414cd
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 35ffd08e7dbfc451ce992cc8d04ec2fc6a75232a
+
+COCOAPODS: 1.11.3

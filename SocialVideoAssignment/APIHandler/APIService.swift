@@ -13,18 +13,25 @@ class APIService :  NSObject {
 
     func apiToGetData(completion : @escaping (FeedModelResponse) -> ()){
         URLSession.shared.dataTask(with: sourcesURL) { (data, urlResponse, error) in
+
+            guard error == nil else { return }
+
             if let data = data {
+                do{
 
                 let jsonDecoder = JSONDecoder()
-
                 let imgData = try! jsonDecoder.decode(FeedModelResponse.self, from: data)
                 completion(imgData)
+            }
+            catch{
+            print(error)
+
+            }
             }
         }.resume()
     }
 
     //Profile
-
 
     func apiToGetDataProfile(username: String, completion : @escaping (ProfileModelResponse) -> ()){
 
@@ -32,6 +39,9 @@ class APIService :  NSObject {
 
         print("sourcesURLprofile", sourcesURLprofile)
         URLSession.shared.dataTask(with: sourcesURLprofile) { (data, urlResponse, error) in
+
+            guard error == nil else { return }
+
             if let data = data {
 
                 let jsonDecoder = JSONDecoder()
