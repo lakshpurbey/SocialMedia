@@ -139,8 +139,24 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPF-IH-9Q0">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="283"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhG-8z-0EE">
+                                                <rect key="frame" x="182" y="117" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="I8m-eY-Rl3"/>
+                                                    <constraint firstAttribute="height" constant="50" id="xci-ff-iMw"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="play.circle" catalog="system"/>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="KhG-8z-0EE" secondAttribute="bottom" constant="116" id="3Kh-zH-hT7"/>
+                                            <constraint firstItem="KhG-8z-0EE" firstAttribute="top" secondItem="uPF-IH-9Q0" secondAttribute="top" constant="117" id="5oj-cS-r8W"/>
+                                            <constraint firstItem="KhG-8z-0EE" firstAttribute="leading" secondItem="uPF-IH-9Q0" secondAttribute="leading" constant="182" id="FO4-PP-2Wh"/>
+                                            <constraint firstAttribute="trailing" secondItem="KhG-8z-0EE" secondAttribute="trailing" constant="182" id="Glj-Mq-QM7"/>
                                             <constraint firstAttribute="height" constant="283" id="tMq-zH-9pY"/>
                                         </constraints>
                                     </view>
